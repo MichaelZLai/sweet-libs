@@ -1,0 +1,12 @@
+*{
+  margin:0;
+  text-align:center;
+}
+body{
+  background-color: #FAFAFA;
+}
+h1{
+  background-color: #fff;
+  border-bottom: 1px solid #333844;
+  padding: 20px;
+}
