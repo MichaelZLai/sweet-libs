@@ -10,3 +10,8 @@ h1{
   border-bottom: 1px solid #333844;
   padding: 20px;
 }
+.colorrender-color-preview {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+}
