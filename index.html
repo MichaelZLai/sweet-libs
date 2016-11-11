@@ -17,15 +17,13 @@
     <div id="colorrender">
       <input v-model="colorQuery"
         v-on:keyup.enter="updateColor"
-        placeholder="Enter a color"
-      >
+        placeholder="Enter a color">
       <button v-on:click="updateColor">Update</button>
       <p>Preview:</p>
-      <span
-        v-bind:style="{ backgroundColor: tweenedCSSColor }"
-        class="colorrender-color-preview"
-      ></span>
-      <p>{{ tweenedCSSColor }}</p>
+      <span v-bind:style="{ backgroundColor: transitionCSSColor }"
+        class="colorrender-color-preview">
+      </span>
+      <p>Color Hex: {{ transitionCSSColor }}</p>
     </div>
 
   </body>

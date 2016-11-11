@@ -16,32 +16,14 @@ window.onload = function () {
         blue: 0,
         alpha: 1
       },
-
-    }
-  })
-
-
-
-
-
-
-
-  new Vue({
-    el: '#colorrender',
-    data: {
-      colorQuery: '',
-      color: {
-        red: 0,
-        green: 0,
-        blue: 0,
-        alpha: 1
-      },
-      transitionColor: {}
+      transitionColor:{}
     },
-    created: function () {
+    //after instance is created, allows transitionColor to change colors
+    created: function(){
       this.transitionColor = Object.assign({}, this.color)
     },
-    watch: {
+    watch:{
+      //using Tween.js function for the animation
       color: function () {
         function animate (time) {
           requestAnimationFrame(animate)
@@ -53,6 +35,7 @@ window.onload = function () {
         animate()
       }
     },
+    //computes the inputted color to the new RGBA
     computed: {
       transitionCSSColor: function () {
         return new Color({
@@ -64,8 +47,10 @@ window.onload = function () {
       }
     },
     methods: {
+      //converts the inputted color to RGBA
       updateColor: function () {
         this.color = new Color(this.colorQuery).toRGB()
+        //clears the input box
         this.colorQuery = ''
       }
     }
